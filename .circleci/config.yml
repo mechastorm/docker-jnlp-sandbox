@@ -5,8 +5,14 @@ jobs:
     steps:
       - checkout
       - run:
-            name: Build Image
-            command: docker build -t mechaloidbay/jnlp-slave-sandbox:$CIRCLE_BRANCH .
+          name: Build Image
+          command: docker build -t mechaloidbay/jnlp-slave-sandbox:$CIRCLE_BRANCH .
       - run:
           name: Print the Current Time
           command: date
+      # deploy the image
+      - run:
+          name: Push to Docker Hub
+          command |
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
+            docker push mechaloidbay/jnlp-slave-sandbox:$CIRCLE_BRANCH
