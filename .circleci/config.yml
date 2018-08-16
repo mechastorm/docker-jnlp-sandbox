@@ -5,9 +5,10 @@ jobs:
       - image: debian:stretch
     steps:
       - checkout
+      - setup_remote_docker
       - run:
-          name: Greeting
-          command: echo Hello, world.
+            name: Build Image
+            command: docker build -t mechaloidbay/jnlp-slave-sandbox:$CIRCLE_BRANCH .
       - run:
           name: Print the Current Time
           command: date
