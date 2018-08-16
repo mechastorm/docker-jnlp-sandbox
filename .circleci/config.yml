@@ -10,7 +10,7 @@ jobs:
       - run:
           name: Tag Image
           command: |
-            docker tag $CIRCLE_SHA1 mechaloidbay/jnlp-slave-sandbox:$CIRCLE_BRANCH
+            docker tag $CIRCLE_BRANCH mechaloidbay/jnlp-slave-sandbox:$CIRCLE_BRANCH
       # deploy the image
       - run:
           name: Push to Docker Hub
