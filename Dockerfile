@@ -11,5 +11,6 @@ RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 # Test
 USER jenkins
 RUN sudo apt-get update
+RUN ssh -h
 
 ENTRYPOINT ["jenkins-slave"]
