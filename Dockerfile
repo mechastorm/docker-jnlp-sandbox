@@ -8,7 +8,8 @@ RUN apt-get update && apt-get -y install sudo
 RUN adduser jenkins sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
+# Test
 USER jenkins
-CMD /bin/bash
+RUN apt-get update
 
 ENTRYPOINT ["jenkins-slave"]
