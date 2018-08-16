@@ -6,13 +6,14 @@ jobs:
       - checkout
       - run:
           name: Build Image
-          command: docker build -t mechaloidbay/jnlp-slave-sandbox:$CIRCLE_BRANCH .
+          command: docker build -t mechaloidbay/jnlp-slave-sandbox .
       - run:
-          name: Print the Current Time
-          command: date
+          name: Tag Image
+          command: |
+            docker tag $CIRCLE_SHA1 mechaloidbay/jnlp-slave-sandbox
       # deploy the image
       - run:
           name: Push to Docker Hub
           command: |
             docker login -u $DOCKER_USER -p $DOCKER_PASS
-            docker push mechaloidbay/jnlp-slave-sandbox:$CIRCLE_BRANCH
+            docker push mechaloidbay/jnlp-slave-sandbox
