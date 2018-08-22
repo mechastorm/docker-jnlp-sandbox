@@ -1,5 +1,5 @@
 FROM jenkins/jnlp-slave
-MAINTAINER Shih Oon Liong <github@liong.ca>
+MAINTAINER Shih Oon Liong <shih.liong@samsung.com>
 LABEL Description="Base image for running Jenkin Jobs on" Vendor="Jenkins project" Version="0.0.0"
 
 USER root
