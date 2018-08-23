@@ -1,6 +1,6 @@
 version: "3.3"
 services:
-  jenkins-master-base:
+  jnlp-slave-sandbox:
     image: "${DOCKER_REGISTRY_URL}${DOCKER_REGISTRY_NAMESPACE}jnlp-slave-sandbox${IMAGE_TAG}"
     build:
       context: .
