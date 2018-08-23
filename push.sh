@@ -68,6 +68,6 @@ then
     if [ "$DO_GIT_TAG" -eq "1" ];
     then
         git tag $TAG
-        git push push origin $TAG
+        git push origin $TAG
     fi
 fi
